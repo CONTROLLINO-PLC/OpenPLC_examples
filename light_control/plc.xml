@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <project xmlns:ns1="http://www.plcopen.org/xml/tc6_0201" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.plcopen.org/xml/tc6_0201">
   <fileHeader companyName="CONTROLLINO GmbH" productName="CONTROLLINO MAXI Automation" productVersion="0.1.0" creationDateTime="2022-06-29T09:04:32" contentDescription="Stairs light control example for CONTROLLINO MAXI Automation&#10;&#10;Outputs:&#10;DO0 -&gt; %QX0.0 -&gt; LIGHT_DOWN&#10;DO1 -&gt; %QX0.1 -&gt; LIGHT_MIDDLE&#10;DO2 -&gt; %QX0.2 -&gt; LIGHT_UP&#10;&#10;Inputs:&#10;AI2 -&gt; %IX0.0 -&gt; SWITCH_DOWN&#10;AI3 -&gt; %IX0.1 -&gt; SWITCH_UP&#10;AI4 -&gt; %IX0.2 -&gt; PRESENCE_SENSOR&#10;&#10;Behavior:&#10;The switches at both ends of the stairs are push buttons and will turn the lights on and off.&#10;The lights will turn on and off in sequence with a delay of N milliseconds.&#10;The lights will turn off after N seconds if no presence is detected on a sensor that is placed in the middle of the stairs.&#10;&#10;MIT License&#10;&#10;Copyright (c) 2016-2022 CONTROLLINO GmbH&#10;&#10;Permission is hereby granted, free of charge, to any person obtaining a copy&#10;of this software and associated documentation files (the &quot;Software&quot;), to deal&#10;in the Software without restriction, including without limitation the rights&#10;to use, copy, modify, merge, publish, distribute, sublicense, and/or sell&#10;copies of the Software, and to permit persons to whom the Software is&#10;furnished to do so, subject to the following conditions:&#10;&#10;The above copyright notice and this permission notice shall be included in all&#10;copies or substantial portions of the Software.&#10;&#10;THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR&#10;IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,&#10;FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE&#10;AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER&#10;LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,&#10;OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE&#10;SOFTWARE.&#10;&#10;CONTROLLINO - First software open-source PLC (ARDUINO compatible)&#10; &#10;https://controllino.com/&#10;https://github.com/CONTROLLINO-PLC &#10;https://www.arduino.cc/&#10; &#10;author: CONTROLLINO firmware team&#10;version: 0.1.0"/>
-  <contentHeader name="Stairs Light Control Example" modificationDateTime="2022-07-12T09:48:54" version="0.1.0" author="Firmware Team">
+  <contentHeader name="Stairs Light Control Example" modificationDateTime="2022-07-12T16:46:46" version="0.1.0" author="Firmware Team">
     <coordinateInfo>
       <fbd>
         <scaling x="10" y="10"/>
@@ -79,9 +79,9 @@ Analog Out:  AO0, AO1                                   (%QW0 - %QW1)
               <content>
                 <xhtml:p><![CDATA[In PLC programming it is always a good idea to make a routine that clearly identifies the inputs and outputs with real life use and only in this routine outputs and inputs manipulation happens.
 
-AI2 -> SWITCH_DOWN
-AI3 -> SWITCH_UP
-AI4 -> PRESENCE_SENSOR]]></xhtml:p>
+AI2 -> %IX0.0 -> SWITCH_DOWN
+AI3 -> %IX0.1 -> SWITCH_UP
+AI4 -> %IX0.2 -> PRESENCE_SENSOR]]></xhtml:p>
               </content>
             </comment>
             <leftPowerRail localId="16" height="40" width="10">
@@ -2408,7 +2408,7 @@ AI4 -> PRESENCE_SENSOR]]></xhtml:p>
               </connectionPointOut>
               <expression>T_SEQUENCE</expression>
             </inVariable>
-            <comment localId="158" height="140" width="1150">
+            <comment localId="158" height="140" width="1250">
               <position x="10" y="10"/>
               <content>
                 <xhtml:p><![CDATA[Behaviour:
@@ -2598,9 +2598,9 @@ Analog Out:  AO0, AO1                                   (%QW0 - %QW1)
               <content>
                 <xhtml:p><![CDATA[In PLC programming it is always a good idea to make a routine that clearly identifies the inputs and outputs with real life use and only in this routine outputs and inputs manipulation happens.
 
-DO0 -> LIGHT_DOWN
-DO1 -> LIGHT_MIDDLE
-DO2 -> LIGHT_UP]]></xhtml:p>
+DO0 -> %QX0.0 -> LIGHT_DOWN
+DO1 -> %QX0.1 -> LIGHT_MIDDLE
+DO2 -> %QX0.2 -> LIGHT_UP]]></xhtml:p>
               </content>
             </comment>
             <leftPowerRail localId="1" height="40" width="10" executionOrderId="0">
