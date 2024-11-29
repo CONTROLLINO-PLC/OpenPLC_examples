@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <project xmlns="http://www.plcopen.org/xml/tc6_0201" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ns1="http://www.plcopen.org/xml/tc6.xsd">
   <fileHeader companyName="Desconocido" productName="Sin nombre" productVersion="1" creationDateTime="2024-11-28T09:53:41"/>
-  <contentHeader name="Sin nombre" modificationDateTime="2024-11-28T11:14:30">
+  <contentHeader name="Sin nombre" modificationDateTime="2024-11-28T19:11:40">
     <coordinateInfo>
       <fbd>
         <scaling x="10" y="10"/>
@@ -20,60 +20,95 @@
       <pou name="Dimmer" pouType="program">
         <interface>
           <localVars>
-            <variable name="Control_button">
+            <variable name="Control_button" address="%IX0.0">
               <type>
                 <BOOL/>
               </type>
+              <documentation>
+                <xhtml:p><![CDATA[Push button input]]></xhtml:p>
+              </documentation>
             </variable>
-            <variable name="Light_output">
+            <variable name="Light_output" address="%QX0.0">
               <type>
                 <BOOL/>
               </type>
+              <documentation>
+                <xhtml:p><![CDATA[Light dimmer control output]]></xhtml:p>
+              </documentation>
             </variable>
+          </localVars>
+          <localVars>
             <variable name="Light_bright">
               <type>
                 <INT/>
               </type>
+              <documentation>
+                <xhtml:p><![CDATA[Step sequence count indicates the bright level]]></xhtml:p>
+              </documentation>
             </variable>
             <variable name="Pulse_regulator">
               <type>
                 <TIME/>
               </type>
+              <documentation>
+                <xhtml:p><![CDATA[Value in time of pulse width]]></xhtml:p>
+              </documentation>
             </variable>
             <variable name="Light_on_state">
               <type>
                 <BOOL/>
               </type>
+              <documentation>
+                <xhtml:p><![CDATA[Indicates that light is on]]></xhtml:p>
+              </documentation>
             </variable>
             <variable name="Reset_state">
               <type>
                 <BOOL/>
               </type>
+              <documentation>
+                <xhtml:p><![CDATA[Reset de counter, change the state to zero ]]></xhtml:p>
+              </documentation>
             </variable>
             <variable name="Flag_cicle">
               <type>
                 <BOOL/>
               </type>
+              <documentation>
+                <xhtml:p><![CDATA[Flag active during a cicle, 10ms, used to restart]]></xhtml:p>
+              </documentation>
             </variable>
             <variable name="Full_bright">
               <type>
                 <BOOL/>
               </type>
+              <documentation>
+                <xhtml:p><![CDATA[Indicates maximum bright, turn the light on directly]]></xhtml:p>
+              </documentation>
             </variable>
             <variable name="CTU0">
               <type>
                 <derived name="CTU"/>
               </type>
+              <documentation>
+                <xhtml:p><![CDATA[States counter]]></xhtml:p>
+              </documentation>
             </variable>
             <variable name="TP0">
               <type>
                 <derived name="TP"/>
               </type>
+              <documentation>
+                <xhtml:p><![CDATA[Pulse generator and width corrector]]></xhtml:p>
+              </documentation>
             </variable>
             <variable name="TOF0">
               <type>
                 <derived name="TOF"/>
               </type>
+              <documentation>
+                <xhtml:p><![CDATA[Cicle generator timer]]></xhtml:p>
+              </documentation>
             </variable>
           </localVars>
         </interface>
