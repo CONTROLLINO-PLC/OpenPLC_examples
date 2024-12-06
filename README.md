@@ -75,7 +75,7 @@ Please follow the links in the example names for more complete example documenta
 
 - Soon we will add with the help of the community we will add other classic PLC automation examples like Elevator and Traffic Lights.
 
-![light_control](./light_control/images/light_control.png) ![pump_control](./pump_control/images/pump_control.png)
+ ![alt text](stairs_light_control/images/Connections.jpg)![alt text](<water_control/images/Level water control.jpg>)
 
 ### How to get and open examples
 
@@ -154,6 +154,17 @@ Analog In:   A0, A1, A2, A3, A4                         (%IW0 - %IW4)
 Analog Out:  D0, D1, D2, D3, D4, D5, D6, D7             (%QW0 - %QW7)
              D8, D9, D10, D11                           (%QW8 - %QW11)
 *********************************************************************/
+```
+
+### CONTROLLINO MICRO
+
+```cpp
+/*********PINOUT CONFIGURATION********
+Digital In:  DI0, DI1, DI2, DI3                         (%IX0.0 - %IX0.3)
+Digital Out: DO0, DO1, DO2, DO3, DO4, DO5               (%QX0.0 - %QX0.5)
+Analog In:   AI0, AI1, AI2, AI3, AI4, AI5               (%IW0 - %IW5)
+Analog Out:  DO6, DO7                                   (%QW0 - %QW1)
+***********************/
 ```
 
 ## Support Info
